@@ -12,8 +12,8 @@ const ClientLogos = () => {
   ];
 
   return (
-    <section className="py-12 bg-[#f9f9f9] overflow-hidden">
-      <div className="container">
+    <section className="py-12 bg-[#f9f9f9] w-full max-w-full overflow-hidden">
+      <div className="container mx-auto px-4 w-full">
         <p className="text-center text-sm text-gray-600 uppercase tracking-wide mb-8">
           Trusted by industry leaders and governments worldwide
         </p>

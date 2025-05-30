@@ -18,7 +18,7 @@ const SectorsGrid = () => {
     {
       title: "Oil & Gas",
       image: "/homepage/sectors/oil_gas.webp",
-      link: "/sector/oil-gas"
+      link: "/sector/oil-gases"
     },
     {
       title: "Healthcare & Hospitality",
@@ -33,7 +33,7 @@ const SectorsGrid = () => {
     {
       title: "Roads & Infrastructure",
       image: "/homepage/sectors/Road_Infrastructure.webp",
-      link: "/sector/roads-infrastructure"
+      link: "/sector/road-infrastructure"
     },
   ];
 

@@ -417,19 +417,24 @@ const SectorTemplate: React.FC<SectorTemplateProps> = ({
               bring your vision to life.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                size="lg"
-                className="bg-primary text-white hover:bg-primary/90"
-              >
-                Contact Our Specialists <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-primary border-primary hover:bg-primary/10"
-              >
-                View More Projects
-              </Button>
+            <Link href="/contact">
+        <Button
+          size="lg"
+          className="bg-primary text-white hover:bg-primary/90"
+        >
+          Contact Our Specialists <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
+      </Link>
+
+      <Link href="/portfolio">
+        <Button
+          size="lg"
+          variant="outline"
+          className="text-primary border-primary hover:bg-primary/10"
+        >
+          View More Projects
+        </Button>
+      </Link>
             </div>
           </motion.div>
         </div>

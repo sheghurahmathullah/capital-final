@@ -9,13 +9,13 @@ const ExpertiseSection = () => {
       image: "/homepage/expertise/Architectural & Landscape.webp",
       description:
         "Creating iconic structures and spaces that inspire and endure.",
-      link: "/expertise/architecture",
+      link: "/expertise/architecture-landscape",
     },
     {
       title: "Fit-out & Interior Design",
       image: "/homepage/expertise/Fit-out & Interior Design.webp",
       description: "Transforming spaces with function, aesthetics and purpose.",
-      link: "/expertise/fit-out",
+      link: "/expertise/fitout-interior",
     },
     {
       title: "Structural Engineering",
@@ -28,14 +28,14 @@ const ExpertiseSection = () => {
       image: "/homepage/expertise/Project management.webp",
       description:
         "Delivering excellence through meticulous planning and execution.",
-      link: "/expertise/pmc",
+      link: "/expertise/project-management",
     },
     {
       title: "Environmental Solutions",
       image: "/homepage/expertise/Environmental solution.webp",
       description:
         "Sustainable approaches for a resilient and responsible future.",
-      link: "/expertise/environmental",
+      link: "/expertise/environmental-solution",
     },
     {
       title: "MEP Design & Services",

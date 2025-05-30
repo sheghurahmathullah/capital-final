@@ -46,6 +46,10 @@ const Navbar = () => {
       title: "Roads & Infrastructure",
       path: "/sector/road-infrastructure",
     },
+    {
+      title: "Residential & Villa",
+      path: "/sector/residential-villa",
+    },
     { title: "WTP, RO & Desalination", path: "/sector/wtp-ro" },
   ];
 
