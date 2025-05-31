@@ -15,7 +15,7 @@ const NewsroomTeasers = () => {
     {
       title: "Press Releases",
       icon: <Newspaper className="h-8 w-8 text-primary" />,
-      description: "Latest announcements from Capital EC",
+      description: "Latest announcements from Capital Engineering consultancy",
       link: "/newsroom/press-release"
     },
     {

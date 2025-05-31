@@ -70,7 +70,7 @@ const MarineAndPorts = () => {
       <SectorTemplate
         title="Marine & Ports"
         subtitle="Engineering Excellence for Maritime Infrastructure"
-        bannerImage="https://images.unsplash.com/photo-1558243417-56bf0e7c43bd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        bannerImage="/sector/marine.jpg"
         introduction="Comprehensive engineering solutions for ports, harbors, and maritime facilities. Our expertise spans from conceptual planning to detailed design and construction supervision, ensuring safe, efficient, and sustainable maritime infrastructure that supports global trade and economic development."
         capabilities={[
           "Container terminal design and optimization",

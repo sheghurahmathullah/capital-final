@@ -70,7 +70,7 @@ const HealthcareAndHospitality = () => {
       <SectorTemplate
         title="Healthcare & Hospitality"
         subtitle="Creating Spaces for Wellness and Comfort"
-        bannerImage="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        bannerImage="/sector/healthcare.jpg"
         introduction="Comprehensive engineering and design solutions for healthcare facilities and hospitality properties. Our integrated approach creates healing environments and exceptional guest experiences through thoughtful design, advanced technologies, and operational efficiency, ensuring both function and comfort."
         capabilities={[
           "Hospitals and medical centers design",

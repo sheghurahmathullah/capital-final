@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import ContactCTA from "@/components/ContactCTA";
+import Link from 'next/link'
 import {
   ArrowRight,
   CheckCircle,
@@ -72,7 +73,7 @@ const FitoutInterior = () => {
               muted
               loop
               className="w-full h-full object-cover"
-              poster="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              poster="/expertise/photos/fitout/banner.jpg"
             >
               <source
                 src="https://assets.mixkit.co/videos/preview/mixkit-modern-living-room-interior-3505-large.mp4"
@@ -196,10 +197,11 @@ const FitoutInterior = () => {
             </div>
 
             <div className="flex justify-center mt-12">
-              <Button variant="outline" className="group">
+             <Link href={"/portfolio"}>
+             <Button variant="outline" className="group">
                 View All Projects
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </Button></Link>
             </div>
           </div>
         </section>
@@ -253,7 +255,7 @@ const FitoutInterior = () => {
               >
                 <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    src="/expertise/photos/fitout/1.png"
                     alt="Modern interior design"
                     className="w-full h-full object-cover"
                   />
@@ -363,14 +365,14 @@ const FitoutInterior = () => {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="h-[500px]">
               <img
-                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                src="/expertise/photos/fitout/left.png"
                 alt="Office interior design"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="h-[500px]">
               <img
-                src="https://images.unsplash.com/photo-1618219944342-824e40a13285?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/expertise/photos/fitout/right.jpg"
                 alt="Retail interior design"
                 className="w-full h-full object-cover"
               />

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -15,11 +15,7 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // Add this useEffect for scroll restoration
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [usePathname()]);
+  const pathname = usePathname();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -98,8 +94,6 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-6">
-          {/* <NavLink href="/">HOME</NavLink> */}
-
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className="group text-sm font-medium transition-colors flex items-center text-gray-700 hover:text-primary">
@@ -113,7 +107,7 @@ const Navbar = () => {
                   key={index}
                   className="py-2.5 cursor-pointer hover:bg-gray-50 rounded-md"
                 >
-                  <Link href={area.path} className="w-full">
+                  <Link href={area.path} className="w-full" prefetch={true}>
                     {area.title}
                   </Link>
                 </DropdownMenuItem>
@@ -121,6 +115,7 @@ const Navbar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
+          {/* Add Sectors Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className="group text-sm font-medium transition-colors flex items-center text-gray-700 hover:text-primary">
@@ -128,13 +123,13 @@ const Navbar = () => {
                 <ChevronDown className="h-4 w-4 ml-1 transition-transform group-data-[state=open]:rotate-180" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white w-56 p-2 rounded-lg shadow-lg border-0 max-h-[70vh] overflow-y-auto">
+            <DropdownMenuContent className="bg-white w-64 p-2 rounded-lg shadow-lg border-0">
               {sectors.map((sector, index) => (
                 <DropdownMenuItem
                   key={index}
                   className="py-2.5 cursor-pointer hover:bg-gray-50 rounded-md"
                 >
-                  <Link href={sector.path} className="w-full">
+                  <Link href={sector.path} className="w-full" prefetch={true}>
                     {sector.title}
                   </Link>
                 </DropdownMenuItem>
@@ -155,7 +150,7 @@ const Navbar = () => {
                   key={index}
                   className="py-2.5 cursor-pointer hover:bg-gray-50 rounded-md"
                 >
-                  <Link href={topic.path} className="w-full">
+                  <Link href={topic.path} className="w-full" prefetch={true}>
                     {topic.title}
                   </Link>
                 </DropdownMenuItem>
@@ -163,15 +158,21 @@ const Navbar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <NavLink href="/careers">CAREERS</NavLink>
-          <NavLink href="/contact">CONTACT</NavLink>
+          <NavLink href="/careers" prefetch={true}>
+            CAREERS
+          </NavLink>
+          <NavLink href="/contact" prefetch={true}>
+            CONTACT
+          </NavLink>
 
           <Button
             variant="outline"
             className="ml-4 uppercase text-primary border-primary hover:bg-primary hover:text-white"
             asChild
           >
-            <Link href="/contact">GET IN TOUCH</Link>
+            <Link href="/contact" prefetch={true}>
+              GET IN TOUCH
+            </Link>
           </Button>
         </nav>
 
@@ -285,12 +286,15 @@ const Navbar = () => {
 const NavLink = ({
   href,
   children,
+  prefetch,
 }: {
   href: string;
   children: React.ReactNode;
+  prefetch?: boolean;
 }) => (
   <Link
     href={href}
+    prefetch={prefetch}
     className="text-sm font-medium relative text-gray-700 hover:text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-all"
   >
     {children}

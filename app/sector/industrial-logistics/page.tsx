@@ -70,7 +70,7 @@ const IndustrialAndLogistics = () => {
       <SectorTemplate
         title="Industrial & Logistics"
         subtitle="Engineering Efficient Production and Distribution"
-        bannerImage="https://images.unsplash.com/photo-1590496794008-383c8070b257?q=80&w=1991&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        bannerImage="/sector/industrial.jpeg"
         introduction="Comprehensive engineering solutions for industrial facilities and logistics centers. Our expertise spans manufacturing plants, warehouses, and distribution networks, creating efficient, sustainable, and technology-driven environments that optimize operations and enhance supply chain performance."
         capabilities={[
           "Manufacturing facility design",

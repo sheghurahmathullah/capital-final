@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import ContactCTA from "@/components/ContactCTA";
+import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
@@ -72,7 +73,7 @@ const BimService = () => {
               muted
               loop
               className="w-full h-full object-cover"
-              poster="/expertise/bim/bimhero.jpg"
+              poster="/expertise/photos/bim/banner.jpg"
             >
               <source
                 src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-building-blueprint-9753-large.mp4"
@@ -198,10 +199,11 @@ const BimService = () => {
             </div>
 
             <div className="flex justify-center mt-12">
-              <Button variant="outline" className="group">
-                View All BIM Projects
+            <Link href={"/portfolio"}>
+             <Button variant="outline" className="group">
+                View All Projects
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </Button></Link>
             </div>
           </div>
         </section>
@@ -257,7 +259,7 @@ const BimService = () => {
               >
                 <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
                   <img
-                    src="/expertise/bim/bim1.jpg"
+                    src="/expertise/photos/bim/1.jpg"
                     alt="BIM model coordination and review"
                     className="w-full h-full object-cover"
                   />
@@ -375,7 +377,7 @@ const BimService = () => {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="h-[500px]">
               <img
-                src="/expertise/bim/bimleft.jpg"
+                src="/expertise/photos/bim/left.jpg"
                 alt="BIM coordination meeting with team"
                 className="w-full h-full object-cover"
               />
@@ -383,7 +385,7 @@ const BimService = () => {
 
             <div className="h-[500px]">
               <img
-                src="/expertise/bim/bimright.jpg"
+                src="/expertise/photos/bim/right.jpg"
                 alt="Digital BIM model review on large screen"
                 className="w-full h-full object-cover"
               />

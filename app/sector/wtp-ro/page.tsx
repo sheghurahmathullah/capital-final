@@ -70,7 +70,7 @@ const WaterDesalination = () => {
       <SectorTemplate
         title="WTP, RO & Desalination"
         subtitle="Engineering Water Solutions for Arid Environments"
-        bannerImage="https://plus.unsplash.com/premium_photo-1682144397847-f5c82df5476a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        bannerImage="/sector/wtp.jpg"
         introduction="Comprehensive engineering solutions for water treatment, reverse osmosis, and desalination systems. Our expertise ensures reliable, efficient, and sustainable water infrastructure that addresses the critical needs of water-scarce regions while optimizing energy consumption and environmental impact."
         capabilities={[
           "Seawater desalination plants",

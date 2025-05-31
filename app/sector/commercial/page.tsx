@@ -80,7 +80,7 @@ const Commercial = () => {
       <SectorTemplate
         title="Commercial"
         subtitle="Crafting Exceptional Business Environments"
-        bannerImage="/sector/commercial/commercialhero.jpg"
+        bannerImage="/sector/commercial.jpeg"
         // bannerAlt="Commercial sector hero image"
         // bannerPriority={true}
         // disableBannerAnimation={true}

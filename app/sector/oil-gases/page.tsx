@@ -70,7 +70,7 @@ const OilAndGas = () => {
       <SectorTemplate
         title="Oil & Gas"
         subtitle="Engineering Excellence for Energy Infrastructure"
-        bannerImage="https://images.unsplash.com/photo-1726731782158-fcf6822b6ca4?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        bannerImage="/sector/oilgas.webp"
         introduction="Comprehensive engineering solutions for upstream, midstream, and downstream oil and gas operations. Our expertise ensures safe, efficient, and sustainable energy infrastructure development that meets the highest industry standards and environmental regulations."
         capabilities={[
           "Offshore platform design and engineering",

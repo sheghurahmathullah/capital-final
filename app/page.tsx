@@ -178,7 +178,7 @@ const Page = () => {
             }
           }
         }
-      }, 50); // Small delay to prevent rapid firing
+      }, 50);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });

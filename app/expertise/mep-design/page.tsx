@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import ContactCTA from "@/components/ContactCTA";
 import {
   ArrowRight,
@@ -370,7 +371,7 @@ const MepDesign = () => {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="h-[500px]">
               <img
-                src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/expertise/photos/mep/left.jpeg"
                 alt="MEP systems coordination meeting"
                 className="w-full h-full object-cover"
               />
@@ -378,7 +379,7 @@ const MepDesign = () => {
 
             <div className="h-[500px]">
               <img
-                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/expertise/photos/mep/right.jpeg"
                 alt="Building mechanical room with MEP systems"
                 className="w-full h-full object-cover"
               />

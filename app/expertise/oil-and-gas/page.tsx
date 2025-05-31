@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import ContactCTA from "@/components/ContactCTA";
+import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
@@ -198,10 +199,11 @@ const Oilgas = () => {
             </div>
 
             <div className="flex justify-center mt-12">
-              <Button variant="outline" className="group">
-                View All Oil & Gas Projects
+            <Link href={"/portfolio"}>
+             <Button variant="outline" className="group">
+                View All Projects
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </Button></Link>
             </div>
           </div>
         </section>
@@ -258,7 +260,7 @@ const Oilgas = () => {
               >
                 <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
                   <img
-                    src="/expertise/oil/oil1.jpg"
+                    src="/expertise/photos/oilgas/1.JPG"
                     alt="Oil and gas facility engineering"
                     className="w-full h-full object-cover"
                   />
@@ -376,7 +378,7 @@ const Oilgas = () => {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="h-[500px]">
               <img
-                src="/expertise/oil/oilleft.jpg"
+                src="/expertise/photos/oilgas/left.jpg"
                 alt="Offshore oil platform engineering"
                 className="w-full h-full object-cover"
               />
@@ -384,7 +386,7 @@ const Oilgas = () => {
 
             <div className="h-[500px]">
               <img
-                src="/expertise/oil/oilright.jpg"
+                src="/expertise/photos/oilgas/right.jpeg"
                 alt="Oil refinery process engineering"
                 className="w-full h-full object-cover"
               />

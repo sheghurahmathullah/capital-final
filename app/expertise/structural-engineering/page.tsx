@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import ContactCTA from "@/components/ContactCTA";
+import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
@@ -72,7 +73,7 @@ const StructuralEngineerings = () => {
               muted
               loop
               className="w-full h-full object-cover"
-              poster="https://images.unsplash.com/photo-1503387837-b154d5074bd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              poster="/expertise/photos/structure/banner.jpg"
             >
               <source
                 src="https://assets.mixkit.co/videos/preview/mixkit-construction-site-with-a-crane-in-the-city-1823-large.mp4"
@@ -196,10 +197,11 @@ const StructuralEngineerings = () => {
             </div>
 
             <div className="flex justify-center mt-12">
-              <Button variant="outline" className="group">
+            <Link href={"/portfolio"}>
+             <Button variant="outline" className="group">
                 View All Projects
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </Button></Link>
             </div>
           </div>
         </section>
@@ -253,7 +255,7 @@ const StructuralEngineerings = () => {
               >
                 <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    src="/expertise/photos/structure/1.jpeg"
                     alt="Structural engineering design"
                     className="w-full h-full object-cover"
                   />
@@ -365,14 +367,14 @@ const StructuralEngineerings = () => {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="h-[500px]">
               <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+              src="/expertise/photos/structure/left.jpg"
                 alt="Structural engineering design"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="h-[500px]">
               <img
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                src="/expertise/photos/structure/right.jpeg"
                 alt="Structural engineering construction"
                 className="w-full h-full object-cover"
               />

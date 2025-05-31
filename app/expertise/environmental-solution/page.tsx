@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import ContactCTA from "@/components/ContactCTA";
+import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
@@ -72,7 +73,7 @@ const EnvironmentalSolutions = () => {
               muted
               loop
               className="w-full h-full object-cover"
-              poster="https://images.unsplash.com/photo-1527690499469-ef2eff9c6735?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              poster="/expertise/photos/environment/banner.jpg"
             >
               <source
                 src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-green-landscape-with-wind-turbines-4814-large.mp4"
@@ -198,10 +199,11 @@ const EnvironmentalSolutions = () => {
             </div>
 
             <div className="flex justify-center mt-12">
-              <Button variant="outline" className="group">
-                View All Environmental Projects
+            <Link href={"/portfolio"}>
+             <Button variant="outline" className="group">
+                View All Projects
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </Button></Link>
             </div>
           </div>
         </section>
@@ -255,7 +257,7 @@ const EnvironmentalSolutions = () => {
               >
                 <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1714129229396-3ae152ae7047?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="/expertise/photos/environment/1.jpg"
                     alt="Sustainable building design meeting"
                     className="w-full h-full object-cover"
                   />
@@ -368,7 +370,7 @@ const EnvironmentalSolutions = () => {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="h-[500px]">
               <img
-                src="https://images.unsplash.com/photo-1686164748261-33e13eef70b6?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/expertise/photos/environment/left.jpg"
                 alt="Green building design meeting"
                 className="w-full h-full object-cover"
               />
@@ -376,7 +378,7 @@ const EnvironmentalSolutions = () => {
 
             <div className="h-[500px]">
               <img
-                src="https://images.unsplash.com/photo-1517544181962-9157536e648b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/expertise/photos/environment/right.jpg"
                 alt="Sustainable building with green features"
                 className="w-full h-full object-cover"
               />

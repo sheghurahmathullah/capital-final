@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import ContactCTA from "@/components/ContactCTA";
+import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
@@ -72,7 +73,7 @@ const PowerInfrastructure = () => {
               muted
               loop
               className="w-full h-full object-cover"
-              poster="https://images.unsplash.com/photo-1648135327756-b606e2eb8caa?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              poster="/expertise/photos/power/banner.jpg"
             >
               <source
                 src="https://assets.mixkit.co/videos/preview/mixkit-time-lapse-of-a-building-being-built-43593-large.mp4"
@@ -199,10 +200,11 @@ const PowerInfrastructure = () => {
             </div>
 
             <div className="flex justify-center mt-12">
-              <Button variant="outline" className="group">
-                View All Power Projects
+            <Link href={"/portfolio"}>
+             <Button variant="outline" className="group">
+                View All Projects
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </Button></Link>
             </div>
           </div>
         </section>
@@ -256,7 +258,7 @@ const PowerInfrastructure = () => {
               >
                 <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1571895522054-6df6398649ae?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="/expertise/photos/power/1.jpg"
                     alt="Power infrastructure and electrical systems"
                     className="w-full h-full object-cover"
                   />
@@ -371,7 +373,7 @@ const PowerInfrastructure = () => {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="h-[500px]">
               <img
-                src="https://images.unsplash.com/photo-1718635273788-7388a760921b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/expertise/photos/power/left.jpg"
                 alt="Power substation engineering team meeting"
                 className="w-full h-full object-cover"
               />
@@ -379,7 +381,7 @@ const PowerInfrastructure = () => {
 
             <div className="h-[500px]">
               <img
-                src="https://images.unsplash.com/photo-1594818379496-da1e345b0ded?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/expertise/photos/power/right.jpg"
                 alt="Electrical substation with power infrastructure"
                 className="w-full h-full object-cover"
               />

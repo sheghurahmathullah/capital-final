@@ -70,7 +70,7 @@ const RoadsAndInfrastructure = () => {
       <SectorTemplate
         title="Roads & Infrastructure"
         subtitle="Engineering the Foundation of Urban Development"
-        bannerImage="https://images.unsplash.com/photo-1708356810781-279c0986e16f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        bannerImage="/sector/road.jpeg"
         introduction="Comprehensive engineering solutions for transportation networks and urban infrastructure. From highways and interchanges to bridges and tunnels, we deliver resilient, efficient, and sustainable infrastructure that connects communities, enhances mobility, and supports economic development."
         capabilities={[
           "Highway and expressway design",

@@ -70,7 +70,7 @@ const Education = () => {
       <SectorTemplate
         title="Education"
         subtitle="Designing Spaces for Learning and Growth"
-        bannerImage="https://plus.unsplash.com/premium_photo-1733306455377-2ef61e873f69?q=80&w=2027&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        bannerImage="/sector/education.jpeg"
         introduction="Creating innovative educational environments that inspire learning, collaboration, and academic excellence. Our designs integrate smart technology, sustainable practices, and flexible spaces to meet the evolving needs of educational institutions."
         capabilities={[
           "K-12 school design and campus planning",
