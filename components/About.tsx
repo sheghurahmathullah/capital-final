@@ -152,7 +152,7 @@ const About = () => {
           {/* Image container with 3D effect */}
           <div
             ref={imageContainerRef}
-            className="w-full lg:w-1/2 h-[400px] lg:h-[500px] relative opacity-0"
+            className="w-full lg:w-1/2 h-auto lg:h-[500px] aspect-square lg:aspect-auto relative opacity-0"
           >
             <div
               ref={imageRef}
@@ -161,7 +161,7 @@ const About = () => {
               <img
                 src="/about1.webp"
                 alt="About our company"
-                className="object-cover object-center"
+                className="w-full h-full object-cover object-center"
               />
               {/* Subtle overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
