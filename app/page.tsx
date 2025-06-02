@@ -72,70 +72,55 @@ const Page = () => {
     { ref: useRef<HTMLDivElement>(null), name: "expertise" },
   ]);
 
+  // Initial load effect to ensure starting at the top
   useEffect(() => {
+    // Force scroll to top on initial load
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
-    });
-  }, []);
-  useEffect(() => {
-    console.log({
-      state,
+      behavior: "instant", // Use 'instant' instead of 'smooth'
     });
 
-    if (state === "before-3d") {
-      twoDRef.current?.focus();
-
-      document.body.style.overflow = "auto";
-    }
-    if (state === "after-3d") {
-      twoDRef.current?.focus();
-      // window.scrollTo({
-      //   top: afterRef.current!.getBoundingClientRect().top + window.scrollY,
-      //   behavior: "smooth",
-      // });
-
-      document.body.style.overflow = "auto";
-    }
-    if (state === "3d") {
-      canvasRef.current?.focus();
-      window.scrollTo({
-        top: buildingRef!.current!.getBoundingClientRect().top + window.scrollY,
-        behavior: "smooth",
+    // Ensure first section (Hero) is visible
+    if (sections.current[0].ref.current) {
+      sections.current[0].ref.current.scrollIntoView({
+        behavior: "instant",
+        block: "start",
       });
-      setTimeout(() => {
-        window.scrollTo({
-          top:
-            buildingRef!.current!.getBoundingClientRect().top + window.scrollY,
-          behavior: "smooth",
-        });
-        document.body.style.overflow = "hidden";
-      }, 1000);
+    }
+
+    // Reset current section to 0 (Hero)
+    setCurrentSection(0);
+  }, []);
+
+  // State change effects
+  useEffect(() => {
+    console.log("Current State:", state);
+
+    // Consistent state handling
+    switch (state) {
+      case "before-3d":
+        twoDRef.current?.focus();
+        document.body.style.overflow = "auto";
+        break;
+      case "after-3d":
+        twoDRef.current?.focus();
+        document.body.style.overflow = "auto";
+        break;
+      case "3d":
+        canvasRef.current?.focus();
+        if (buildingRef.current) {
+          window.scrollTo({
+            top:
+              buildingRef.current.getBoundingClientRect().top + window.scrollY,
+            behavior: "smooth",
+          });
+          document.body.style.overflow = "hidden";
+        }
+        break;
     }
   }, [state]);
 
-  useEffect(() => {
-    if (buildingRef.current) {
-      const bounding = buildingRef.current.getBoundingClientRect();
-      const isScrolledUp = prevTopRef.current < bounding.top;
-
-      if (isScrolledUp && bounding.top >= 0) {
-        setScrolling("up");
-        setState("before-3d");
-        document.body.style.overflow = "auto";
-
-        // Smooth transition to expertise section
-        const expertiseSection = sections.current[3].ref.current;
-        if (expertiseSection) {
-          expertiseSection.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-
-      prevTopRef.current = bounding.top;
-    }
-  }, []);
-
-  // Optimize scroll handler with debounce
+  // Scroll optimization and section tracking
   useEffect(() => {
     let scrollTimeout: NodeJS.Timeout;
     const handleScroll = () => {
@@ -148,9 +133,9 @@ const Page = () => {
           const viewportHeight = window.innerHeight;
           const currentScrollPos = window.scrollY;
 
-          // Find the most visible section
+          // Find the most visible section with more robust calculation
           let maxVisibility = 0;
-          let mostVisibleIndex = currentSection;
+          let mostVisibleIndex = 0; // Default to first section (Hero)
 
           sections.current.forEach((section, index) => {
             if (section.ref.current) {
@@ -165,7 +150,7 @@ const Page = () => {
             }
           });
 
-          // Only update if section changed
+          // Always ensure Hero section is the default starting point
           if (mostVisibleIndex !== currentSection) {
             setCurrentSection(mostVisibleIndex);
             const targetSection =
@@ -173,7 +158,7 @@ const Page = () => {
             if (targetSection) {
               targetSection.scrollIntoView({
                 behavior: "smooth",
-                block: "center",
+                block: "start",
               });
             }
           }
