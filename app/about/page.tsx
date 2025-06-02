@@ -1,12 +1,16 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCTA from "@/components/ContactCTA";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Award, Users, Globe, MessageCircle } from "lucide-react";
+import { Award, Users, Globe, MessageCircle, X } from "lucide-react";
+import { useInView } from "react-intersection-observer";
+
+// Dynamically import CountUp with SSR disabled
+const CountUp = dynamic(() => import("react-countup"), {
+  ssr: false,
+});
 
 const About = () => {
   const portfolioData2 = [
@@ -51,6 +55,17 @@ const About = () => {
       imageSrc: "/award/polyfab.jpg",
       title: "POLYFAB PLASTIC INDUSTRY L.L.C",
     },
+    {
+      id: 15,
+      imageSrc: "/award/BalaCapitalDrKalamAward.jpg",
+      title: "DR. APJ ABDUL KALAM AWARD",
+    },
+    {
+      id: 16,
+      imageSrc:
+        "/award/CAPITAL ENGINEERING CONSULTANCY CERTIFICATE OF APPRECIATION 2025 (2)_001.png",
+      title: "LANDMARK LEISURE",
+    },
   ];
 
   const logos = [
@@ -64,8 +79,41 @@ const About = () => {
     { img: "/brands/logo-1.svg" },
   ];
 
+  // State to manage full-screen image
+  const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
+
+  // Function to open full-screen image
+  const openFullScreenImage = (imageSrc: string) => {
+    setFullScreenImage(imageSrc);
+  };
+
+  // Function to close full-screen image
+  const closeFullScreenImage = () => {
+    setFullScreenImage(null);
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
+      {/* Full Screen Image Modal */}
+      {fullScreenImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
+          onClick={closeFullScreenImage}
+        >
+          <button
+            className="absolute top-4 right-4 text-white z-60"
+            onClick={closeFullScreenImage}
+          >
+            <X className="h-10 w-10" />
+          </button>
+          <img
+            src={fullScreenImage}
+            alt="Full Screen Award"
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+      )}
+
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
@@ -94,7 +142,7 @@ const About = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
               <MetricCard number="20+" label="Years of Experience" />
               <MetricCard number="7,200+" label="Projects Completed" />
-              <MetricCard number="500+" label="Expert Engineers" />
+              <MetricCard number="600+" label="Expert Engineers" />
               <MetricCard number="10+" label="Industries" />
             </div>
             <p className="text-center mt-10 text-gray-600">
@@ -112,7 +160,8 @@ const About = () => {
                 <p className="text-gray-700 leading-relaxed">
                   "To be a globally recognized multidisciplinary consultancy,
                   shaping the construction landscape with innovative, reliable,
-                  and sustainable solutions."
+                  and sustainable solutions, and emerging as one of the top
+                  consultants in the world."
                 </p>
               </div>
 
@@ -120,10 +169,10 @@ const About = () => {
                 <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
                 <p className="text-gray-700 leading-relaxed">
                   "We deliver unparalleled value through tailored engineering
-                  solutions, leveraging advanced technologies and a skilled
-                  team. Committed to sustainability, we enhance the built
-                  environment, foster development, and create lasting value
-                  worldwide."
+                  solutions, leveraging advanced technologies and a culturally
+                  diverse and skilled team. Committed to sustainability, we
+                  enhance the built environment, foster development, and create
+                  lasting value worldwide."
                 </p>
               </div>
             </div>
@@ -195,7 +244,8 @@ const About = () => {
                 {portfolioData2.map((award) => (
                   <div
                     key={award.id}
-                    className="min-w-[280px] bg-white p-6 rounded-md shadow-sm flex flex-col items-center justify-center text-center"
+                    className="min-w-[280px] bg-white p-6 rounded-md shadow-sm flex flex-col items-center justify-center text-center cursor-pointer hover:scale-105 transition-transform"
+                    onClick={() => openFullScreenImage(award.imageSrc)}
                   >
                     <div className="h-52 w-full mb-4 overflow-hidden rounded">
                       <img
@@ -211,7 +261,8 @@ const About = () => {
                 {portfolioData2.slice(0, 4).map((award) => (
                   <div
                     key={`duplicate-${award.id}`}
-                    className="min-w-[280px] bg-white p-6 rounded-md shadow-sm flex flex-col items-center justify-center text-center"
+                    className="min-w-[280px] bg-white p-6 rounded-md shadow-sm flex flex-col items-center justify-center text-center cursor-pointer hover:scale-105 transition-transform"
+                    onClick={() => openFullScreenImage(award.imageSrc)}
                   >
                     <div className="h-52 w-full mb-4 overflow-hidden rounded">
                       <img
@@ -376,14 +427,32 @@ const About = () => {
   );
 };
 
-const MetricCard = ({ number, label }: { number: string; label: string }) => (
-  <div className="text-center p-6 bg-white rounded-md shadow-sm">
-    <div className="text-4xl lg:text-5xl font-bold text-[#211574] mb-2">
-      {number}
+const MetricCard = ({ number, label }: { number: string; label: string }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  // Extract the numeric value from the number string
+  const numericValue = parseFloat(number.replace("+", ""));
+
+  return (
+    <div ref={ref} className="text-center p-6 bg-white rounded-md shadow-sm">
+      <div className="text-4xl lg:text-5xl font-bold text-[#211574] mb-2">
+        {typeof window !== "undefined" && inView ? (
+          <CountUp
+            end={numericValue}
+            duration={2}
+            suffix={number.includes("+") ? "+" : ""}
+          />
+        ) : (
+          number
+        )}
+      </div>
+      <div className="text-gray-600">{label}</div>
     </div>
-    <div className="text-gray-600">{label}</div>
-  </div>
-);
+  );
+};
 
 const PhilosophyCard = ({
   title,

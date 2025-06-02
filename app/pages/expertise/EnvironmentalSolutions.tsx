@@ -118,7 +118,7 @@ const EnvironmentalSolutions = () => {
                 className="flex flex-col items-center"
               >
                 <Leaf className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">500+</h3>
+                <h3 className="text-2xl font-bold">600+</h3>
                 <p className="text-gray-600">Green Building Projects</p>
               </motion.div>
 

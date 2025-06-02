@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -17,6 +17,82 @@ const Contact = () => {
     website: "",
     message: "",
   });
+
+  const locationData = useMemo(
+    () => ({
+      UAE: [
+        {
+          city: "Sharjah HQ",
+          address: "Unit 203, Sama 2 Tower, Abu Shagara, Sharjah, UAE",
+          phone: "+971 65536806",
+        },
+        {
+          city: "Dubai",
+          address:
+            "Unit 2109, 21st Floor Regal Tower, Business Bay, Dubai, UAE",
+          phone: "+971 42546155",
+        },
+        {
+          city: "Abu Dhabi",
+          address:
+            "Unit M 1, 2, 3 & 4, Building No: C402, Shabia Musaffah, Sector - 10, Abu Dhabi, UAE",
+          phone: "+971 25537568",
+        },
+        {
+          city: "Ras Al Khaimah",
+          address: "Unit 1506, Julphar Tower, Al Nakheel, RAK, UAE",
+          phone: "+971 72338744",
+        },
+        {
+          city: "Ajman",
+          address: "Unit 101, Al Mashriq Building, Rashideya 2, Ajman, UAE",
+          phone: "+971 557973127",
+        },
+        {
+          city: "Umm Al Quwain",
+          address: "Unit 1005, Shomook Business Complex, Etihad Road, UAQ, UAE",
+          phone: "+971 6766 5567",
+        },
+      ],
+      KSA: [
+        {
+          city: "Riyadh",
+          address:
+            "2808 Jarir, Al Malaz District, Unit No. 8, PO Box: 12831, Riyadh, KSA",
+          phone: "+966 53 276 9180",
+        },
+      ],
+      Oman: [
+        {
+          city: "Muscat",
+          address: "Unit no. 11, Building no. 155, Azaiba, Muscat, Oman",
+          phone: "+968 94775486",
+        },
+      ],
+      Egypt: [
+        {
+          city: "Cairo",
+          address: "Cairo Governorate 289, Dream House, 3233433 Egypt",
+          phone: "+968 94775486",
+        },
+      ],
+      India: [
+        {
+          city: "Chennai",
+          address:
+            "Unit No. 4/2, Lloyds Avenue, Adambakkam, P.O Box 600 088, India",
+          phone: "+91 8144558889 / +91 443598226",
+        },
+        {
+          city: "Kerala",
+          address:
+            "Room No. 5A, Municipal Townhall Building, Kurishupally Junction, Pala - 686575",
+          phone: "+91 9048820002",
+        },
+      ],
+    }),
+    []
+  );
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -62,74 +138,74 @@ const Contact = () => {
               {/* Map Component */}
               <div className="w-full h-full">
                 <WorldMap
-                  // scale={400}
-                  // center={[55.4209, 25.3463]}
-                  // minZoom={200}
-                  // maxZoom={800}
-                  // showLocationLabels
-                  // labelStyle={
-                  //   {
-                  //     fontSize: 12,
-                  //     fontWeight: 500,
-                  //     fill: "#2563eb",
-                  //     textShadow: "1px 1px 1px rgba(0,0,0,0.2)",
-                  //   } as React.CSSProperties
-                  // }
-                  // locations={[
-                  //   { name: "Sharjah", coordinates: [55.392, 25.3576] },
-                  //   { name: "Dubai", coordinates: [55.2708, 25.2048] },
-                  //   { name: "Abu Dhabi", coordinates: [54.3773, 24.4539] },
-                  //   { name: "Ras Al Khaimah", coordinates: [55.9754, 25.7869] },
-                  //   { name: "Ajman", coordinates: [55.4788, 25.4052] },
-                  //   { name: "Umm Al Quwain", coordinates: [55.5552, 25.5856] },
-                  //   { name: "Riyadh", coordinates: [46.7219, 24.7136] },
-                  //   { name: "Muscat", coordinates: [58.4059, 23.588] },
-                  //   { name: "Cairo", coordinates: [31.2357, 30.0444] },
-                  //   { name: "Chennai", coordinates: [80.2707, 13.0827] },
-                  //   { name: "Kerala", coordinates: [76.2711, 10.8505] },
-                  // ]}
-                  // dots={[
-                  //   {
-                  //     start: { lat: 25.3576, lng: 55.392 },
-                  //     end: { lat: 25.2048, lng: 55.2708 },
-                  //   },
-                  //   {
-                  //     start: { lat: 25.3576, lng: 55.392 },
-                  //     end: { lat: 24.4539, lng: 54.3773 },
-                  //   },
-                  //   {
-                  //     start: { lat: 25.3576, lng: 55.392 },
-                  //     end: { lat: 25.7869, lng: 55.9754 },
-                  //   },
-                  //   {
-                  //     start: { lat: 25.3576, lng: 55.392 },
-                  //     end: { lat: 25.4052, lng: 55.4788 },
-                  //   },
-                  //   {
-                  //     start: { lat: 25.3576, lng: 55.392 },
-                  //     end: { lat: 25.5856, lng: 55.5552 },
-                  //   },
-                  //   {
-                  //     start: { lat: 25.3576, lng: 55.392 },
-                  //     end: { lat: 24.7136, lng: 46.7219 },
-                  //   },
-                  //   {
-                  //     start: { lat: 25.3576, lng: 55.392 },
-                  //     end: { lat: 23.588, lng: 58.4059 },
-                  //   },
-                  //   {
-                  //     start: { lat: 25.3576, lng: 55.392 },
-                  //     end: { lat: 30.0444, lng: 31.2357 },
-                  //   },
-                  //   {
-                  //     start: { lat: 25.3576, lng: 55.392 },
-                  //     end: { lat: 13.0827, lng: 80.2707 },
-                  //   },
-                  //   {
-                  //     start: { lat: 13.0827, lng: 80.2707 },
-                  //     end: { lat: 10.8505, lng: 76.2711 },
-                  //   },
-                  // ]}
+                // scale={400}
+                // center={[55.4209, 25.3463]}
+                // minZoom={200}
+                // maxZoom={800}
+                // showLocationLabels
+                // labelStyle={
+                //   {
+                //     fontSize: 12,
+                //     fontWeight: 500,
+                //     fill: "#2563eb",
+                //     textShadow: "1px 1px 1px rgba(0,0,0,0.2)",
+                //   } as React.CSSProperties
+                // }
+                // locations={[
+                //   { name: "Sharjah", coordinates: [55.392, 25.3576] },
+                //   { name: "Dubai", coordinates: [55.2708, 25.2048] },
+                //   { name: "Abu Dhabi", coordinates: [54.3773, 24.4539] },
+                //   { name: "Ras Al Khaimah", coordinates: [55.9754, 25.7869] },
+                //   { name: "Ajman", coordinates: [55.4788, 25.4052] },
+                //   { name: "Umm Al Quwain", coordinates: [55.5552, 25.5856] },
+                //   { name: "Riyadh", coordinates: [46.7219, 24.7136] },
+                //   { name: "Muscat", coordinates: [58.4059, 23.588] },
+                //   { name: "Cairo", coordinates: [31.2357, 30.0444] },
+                //   { name: "Chennai", coordinates: [80.2707, 13.0827] },
+                //   { name: "Kerala", coordinates: [76.2711, 10.8505] },
+                // ]}
+                // dots={[
+                //   {
+                //     start: { lat: 25.3576, lng: 55.392 },
+                //     end: { lat: 25.2048, lng: 55.2708 },
+                //   },
+                //   {
+                //     start: { lat: 25.3576, lng: 55.392 },
+                //     end: { lat: 24.4539, lng: 54.3773 },
+                //   },
+                //   {
+                //     start: { lat: 25.3576, lng: 55.392 },
+                //     end: { lat: 25.7869, lng: 55.9754 },
+                //   },
+                //   {
+                //     start: { lat: 25.3576, lng: 55.392 },
+                //     end: { lat: 25.4052, lng: 55.4788 },
+                //   },
+                //   {
+                //     start: { lat: 25.3576, lng: 55.392 },
+                //     end: { lat: 25.5856, lng: 55.5552 },
+                //   },
+                //   {
+                //     start: { lat: 25.3576, lng: 55.392 },
+                //     end: { lat: 24.7136, lng: 46.7219 },
+                //   },
+                //   {
+                //     start: { lat: 25.3576, lng: 55.392 },
+                //     end: { lat: 23.588, lng: 58.4059 },
+                //   },
+                //   {
+                //     start: { lat: 25.3576, lng: 55.392 },
+                //     end: { lat: 30.0444, lng: 31.2357 },
+                //   },
+                //   {
+                //     start: { lat: 25.3576, lng: 55.392 },
+                //     end: { lat: 13.0827, lng: 80.2707 },
+                //   },
+                //   {
+                //     start: { lat: 13.0827, lng: 80.2707 },
+                //     end: { lat: 10.8505, lng: 76.2711 },
+                //   },
+                // ]}
                 />
               </div>
             </div>
@@ -160,96 +236,18 @@ const Contact = () => {
 
             {/* Location Cards Container */}
             <div className="mt-8">
-              {/* UAE Locations */}
-              {activeTab === "UAE" && (
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <LocationCard
-                    city="Sharjah HQ"
-                    address="Unit 203, Sama 2 Tower, Abu Shagara, Sharjah, UAE"
-                    phone="+971 65536806"
-                  />
-
-                  <LocationCard
-                    city="Dubai"
-                    address="Unit 2109, 21st Floor Regal Tower, Business Bay, Dubai, UAE"
-                    phone="+971 42546155"
-                  />
-
-                  <LocationCard
-                    city="Abu Dhabi"
-                    address="Unit M 1, 2, 3 & 4, Building No: C402, Shabia Musaffah, Sector - 10, Abu Dhabi, UAE"
-                    phone="+971 25537568"
-                  />
-
-                  <LocationCard
-                    city="Ras Al Khaimah"
-                    address="Unit 1506, Julphar Tower, Al Nakheel, RAK, UAE"
-                    phone="+971 72338744"
-                  />
-
-                  <LocationCard
-                    city="Ajman"
-                    address="Unit 101, Al Mashriq Building, Rashideya 2, Ajman, UAE"
-                    phone="+971 557973127"
-                  />
-
-                  <LocationCard
-                    city="Umm Al Quwain"
-                    address="Unit 1005, Shomook Business Complex, Etihad Road, UAQ, UAE"
-                    phone="+971 6766 5567"
-                  />
-                </div>
-              )}
-
-              {/* KSA Locations */}
-              {activeTab === "KSA" && (
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <LocationCard
-                    city="Riyadh"
-                    address="2808 Jarir, Al Malaz District, Unit No. 8, PO Box: 12831, Riyadh, KSA"
-                    phone="+966 53 276 9180"
-                  />
-                </div>
-              )}
-
-              {/* Oman Locations */}
-              {activeTab === "Oman" && (
-                <div className="grid md:grid-cols-2 lg:grid-cols-3  gap-8">
-                  <LocationCard
-                    city="Muscat"
-                    address="Unit no. 11, Building no. 155, Azaiba, Muscat, Oman"
-                    phone="+968 94775486"
-                  />
-                </div>
-              )}
-
-              {/* Egypt Locations */}
-              {activeTab === "Egypt" && (
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <LocationCard
-                    city="Cairo"
-                    address="Cairo Governorate 289, Dream House, 3233433 Egypt"
-                    phone="+968 94775486"
-                  />
-                </div>
-              )}
-
-              {/* India Locations */}
-              {activeTab === "India" && (
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <LocationCard
-                    city="Chennai"
-                    address="Unit No. 4/2, Lloyds Avenue, Adambakkam, P.O Box 600 088, India"
-                    phone="+91 8144558889 / +91 443598226"
-                  />
-
-                  <LocationCard
-                    city="Kerala"
-                    address="Room No. 5A, Municipal Townhall Building, Kurishupally Junction, Pala - 686575"
-                    phone="+91 9048820002"
-                  />
-                </div>
-              )}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {locationData[activeTab as keyof typeof locationData].map(
+                  (location, index) => (
+                    <LocationCard
+                      key={`${activeTab}-${index}`}
+                      city={location.city}
+                      address={location.address}
+                      phone={location.phone}
+                    />
+                  )
+                )}
+              </div>
             </div>
           </div>
         </section>

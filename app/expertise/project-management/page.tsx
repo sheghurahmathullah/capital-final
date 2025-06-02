@@ -17,6 +17,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 const Projectmanagement = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -107,7 +108,7 @@ const Projectmanagement = () => {
         </section>
 
         {/* Credibility Snapshot */}
-  <section className="py-16 bg-white">
+        <section className="py-16 bg-white">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <motion.div
@@ -118,7 +119,9 @@ const Projectmanagement = () => {
                 className="flex flex-col items-center"
               >
                 <Building className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">7200+</h3>
+                <h3 className="text-2xl font-bold">
+                  <CountUp end={7200} duration={2.5} separator="," suffix="+" />
+                </h3>
                 <p className="text-gray-600">Projects Delivered</p>
               </motion.div>
 
@@ -130,7 +133,9 @@ const Projectmanagement = () => {
                 className="flex flex-col items-center"
               >
                 <Globe className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">20+</h3>
+                <h3 className="text-2xl font-bold">
+                  <CountUp end={20} duration={2.5} suffix="+" />
+                </h3>
                 <p className="text-gray-600">Years of Experience</p>
               </motion.div>
 
@@ -142,7 +147,9 @@ const Projectmanagement = () => {
                 className="flex flex-col items-center"
               >
                 <HandshakeIcon className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">500+</h3>
+                <h3 className="text-2xl font-bold">
+                  <CountUp end={600} duration={2.5} suffix="+" />
+                </h3>
                 <p className="text-gray-600">Expert Engineers</p>
               </motion.div>
             </div>
@@ -198,11 +205,12 @@ const Projectmanagement = () => {
             </div>
 
             <div className="flex justify-center mt-12">
-            <Link href={"/portfolio"}>
-             <Button variant="outline" className="group">
-                View All Projects
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button></Link>
+              <Link href={"/portfolio"}>
+                <Button variant="outline" className="group">
+                  View All Projects
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

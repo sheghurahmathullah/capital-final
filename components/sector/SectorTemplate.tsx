@@ -351,10 +351,29 @@ const SectorTemplate: React.FC<SectorTemplateProps> = ({
 
               {downloadBrochure && (
                 <div className="mt-8">
-                  <Button className="bg-primary hover:bg-primary/90 text-white">
-                    <Download className="mr-2 h-4 w-4" />
-                    Download {downloadBrochure.title}
-                  </Button>
+                  <div className="bg-gray-50 p-6 rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0 md:space-x-6">
+                    <div className="flex-grow">
+                      <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                        {downloadBrochure.title}
+                      </h3>
+                      <p className="text-sm md:text-base text-gray-600 max-w-2xl">
+                        Download our comprehensive brochure to get detailed
+                        insights into our {title.toLowerCase()} services.
+                      </p>
+                    </div>
+                    <div className="w-full md:w-auto">
+                      <Button
+                        className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white"
+                        size="lg"
+                        onClick={() =>
+                          window.open(downloadBrochure.url, "_blank")
+                        }
+                      >
+                        <Download className="mr-2 h-4 w-4" />
+                        Download
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               )}
             </motion.div>
@@ -417,24 +436,25 @@ const SectorTemplate: React.FC<SectorTemplateProps> = ({
               bring your vision to life.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact">
-        <Button
-          size="lg"
-          className="bg-primary text-white hover:bg-primary/90"
-        >
-          Contact Our Specialists <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
-      </Link>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="bg-primary text-white hover:bg-primary/90"
+                >
+                  Contact Our Specialists{" "}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
 
-      <Link href="/portfolio">
-        <Button
-          size="lg"
-          variant="outline"
-          className="text-primary border-primary hover:bg-primary/10"
-        >
-          View More Projects
-        </Button>
-      </Link>
+              <Link href="/portfolio">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-primary border-primary hover:bg-primary/10"
+                >
+                  View More Projects
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

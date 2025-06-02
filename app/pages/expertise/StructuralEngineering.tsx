@@ -117,7 +117,7 @@ const StructuralEngineerings = () => {
                 className="flex flex-col items-center"
               >
                 <Building className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">2,500+</h3>
+                <h3 className="text-2xl font-bold">2,600+</h3>
                 <p className="text-gray-600">Structural Projects</p>
               </motion.div>
 
