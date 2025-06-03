@@ -10,6 +10,18 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import localFont from "next/font/local";
+
+const camber = localFont({
+  src: [
+    {
+      path: "../public/fonts/CamberTRIAL-Lt.otf",
+      weight: "200",
+      style: "normal",
+    },
+  ],
+  variable: "--body-font",
+});
 
 const ProjectsShowcase = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -94,10 +106,10 @@ const ProjectsShowcase = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className={`py-24 bg-gray-50 ${camber.variable}`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-[--body-font]">
             A Legacy of Precision and Impact
           </h2>
         </div>

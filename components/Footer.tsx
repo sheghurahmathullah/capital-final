@@ -3,6 +3,18 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import localFont from "next/font/local";
+
+const camber = localFont({
+  src: [
+    {
+      path: "../public/fonts/CamberTRIAL-Lt.otf",
+      weight: "200",
+      style: "normal",
+    },
+  ],
+  variable: "--body-font",
+});
 
 const Footer = () => {
   const [sectorsExpanded, setSectorsExpanded] = useState(false);
@@ -25,22 +37,22 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-white py-16">
+    <footer className={`bg-primary text-white py-16 ${camber.variable}`}>
       <div className="container">
         {/* Main Content */}
         <div className="flex flex-col space-y-16 py-10">
           {/* Top Section */}
           <div>
-            <h2 className="text-5xl font-display mb-4">
+            <h2 className="text-5xl font-display mb-4 font-[--body-font]">
               Let's Create It Together
             </h2>
-            <p className="text-lg max-w-xl">
+            <p className="text-lg max-w-xl font-[--body-font]">
               From concept to completion, we engineer success. Contact us today
               to bring your project to life!
             </p>
             <Link
               href="/contact"
-              className="inline-block mt-8 px-8 py-3 border-2 border-white hover:bg-white hover:text-primary transition-colors"
+              className="inline-block mt-8 px-8 py-3 border-2 border-white hover:bg-white hover:text-primary transition-colors font-[--body-font]"
             >
               GET IN TOUCH
             </Link>
@@ -51,34 +63,38 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row md:justify-between space-y-8 md:space-y-0">
               {/* Navigation Links */}
               <div className="flex flex-wrap gap-x-8 gap-y-2">
-                <Link href="/about" className="hover:opacity-80">
-                  ABOUT US
-                </Link>
-                <Link href="/portfolio" className="hover:opacity-80">
-                  PORTFOLIO
-                </Link>
-                <Link href="/leadership" className="hover:opacity-80">
-                  CAPITAL LEADERSHIP
-                </Link>
-                <Link href="/contact" className="hover:opacity-80">
-                  CONTACT
-                </Link>
+                {["ABOUT US", "PORTFOLIO", "CAPITAL LEADERSHIP", "CONTACT"].map(
+                  (item) => (
+                    <Link
+                      key={item}
+                      href={`/${item.toLowerCase().replace(/ /g, "-")}`}
+                      className="hover:opacity-80 font-[--body-font]"
+                    >
+                      {item}
+                    </Link>
+                  )
+                )}
               </div>
 
               {/* Legal Links */}
               <div className="flex gap-8">
-                <Link href="/terms-of-use" className="hover:opacity-80">
-                  TERMS OF USE
-                </Link>
-                <Link href="/privacy-policy" className="hover:opacity-80">
-                  PRIVACY POLICY
-                </Link>
+                {["TERMS OF USE", "PRIVACY POLICY"].map((item) => (
+                  <Link
+                    key={item}
+                    href={`/${item.toLowerCase().replace(/ /g, "-")}`}
+                    className="hover:opacity-80 font-[--body-font]"
+                  >
+                    {item}
+                  </Link>
+                ))}
               </div>
             </div>
 
             {/* Copyright and Social Links */}
             <div className="flex flex-col md:flex-row md:justify-between items-center mt-8 pt-8 border-t border-white/20">
-              <p>Copyright © 2025 Capital Engineering Consultancy LLC</p>
+              <p className="font-[--body-font]">
+                Copyright © 2025 Capital Engineering Consultancy LLC
+              </p>
 
               <div className="flex gap-6 mt-4 md:mt-0">
                 <a href="#" className="hover:opacity-80" aria-label="Facebook">

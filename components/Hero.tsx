@@ -1,7 +1,19 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import localFont from "next/font/local";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+
+const camber = localFont({
+  src: [
+    {
+      path: "../public/fonts/CamberTRIAL-Lt.otf",
+      weight: "200",
+      style: "normal",
+    },
+  ],
+  variable: "--body-font",
+});
 
 const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
@@ -38,7 +50,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section
+      className={`relative h-screen w-full overflow-hidden ${camber.variable}`}
+    >
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">
         {videos.map((video, index) => (
@@ -65,10 +79,14 @@ const Hero = () => {
       <div className="relative z-10 flex items-center h-full">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mb-8 animate-fade-in text-white">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1
+              className={`text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-[--body-font]`}
+            >
               Your Premier Partner in Engineering & Construction
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl">
+            <p
+              className={`text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl font-[--body-font]`}
+            >
               Capital Engineering Consultancy provides innovative design and
               engineering solutions to meet global construction demands
             </p>

@@ -6,8 +6,21 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import Link from "next/link";
 import Link from "next/link";
+import localFont from "next/font/local";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
+
+// Define the Camber font
+const camber = localFont({
+  src: [
+    {
+      path: "../public/fonts/CamberTRIAL-Lt.otf",
+      weight: "200",
+      style: "normal",
+    },
+  ],
+  variable: "--body-font",
+});
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -134,7 +147,7 @@ const About = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative overflow-hidden py-32 px-4 md:px-8 bg-white"
+      className={`relative overflow-hidden py-32 px-4 md:px-8 bg-white ${camber.variable}`}
     >
       {/* Subtle grid background */}
       <div className="absolute inset-0 opacity-10 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]">
@@ -172,7 +185,7 @@ const About = () => {
           <div ref={contentRef} className="w-full lg:w-1/2 opacity-0">
             <h2
               ref={titleRef}
-              className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6 font-[--body-font]"
             >
               <span className="inline-block text-[#f04343]">Engineering</span>{" "}
               the future
@@ -180,14 +193,14 @@ const About = () => {
 
             <p
               ref={subtitleRef}
-              className="text-xl md:text-2xl font-medium text-gray-700 mb-6"
+              className="text-xl md:text-2xl font-medium text-gray-700 mb-6 font-[--body-font]"
             >
               Precision. Innovation. Excellence.
             </p>
 
             <p
               ref={descriptionRef}
-              className="text-gray-600 mb-8 leading-relaxed"
+              className="text-gray-600 mb-8 leading-relaxed font-[--body-font]"
             >
               Since 2006, Capital Engineering Consultancy has been at the
               forefront of engineering innovation across the UAE, Oman, India
@@ -206,7 +219,7 @@ const About = () => {
               <Link href="/about">
                 <Button
                   variant="outline"
-                  className="relative overflow-hidden group px-8 py-6 rounded-full border-2 border-gray-900 hover:border-transparent transition-all duration-300"
+                  className="relative overflow-hidden group px-8 py-6 rounded-full border-2 border-gray-900 hover:border-transparent transition-all duration-300 font-[--body-font]"
                 >
                   <span className="relative z-10 font-medium">Know More</span>
                   <span className="absolute inset-0 bg-[#f04343] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out"></span>

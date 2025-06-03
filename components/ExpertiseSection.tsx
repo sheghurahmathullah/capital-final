@@ -1,6 +1,19 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import localFont from "next/font/local";
+
+// Add the font definition
+const camber = localFont({
+  src: [
+    {
+      path: "../public/fonts/CamberTRIAL-Lt.otf",
+      weight: "200",
+      style: "normal",
+    },
+  ],
+  variable: "--body-font",
+});
 
 const ExpertiseSection = () => {
   const expertiseAreas = [
@@ -47,13 +60,15 @@ const ExpertiseSection = () => {
   ];
 
   return (
-    <section className="section py-24 bg-gray-50">
+    <section className={`section py-24 bg-gray-50 ${camber.variable}`}>
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 font-sans">
             Built on Precision, Driven by Vision
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p
+            className={`text-lg text-gray-600 leading-relaxed font-[--body-font]`}
+          >
             From concept to completion, we design with intent and build with
             excellence.
           </p>
@@ -74,10 +89,14 @@ const ExpertiseSection = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
               </div>
               <div className="p-8 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                <h3
+                  className={`text-xl font-bold mb-3 text-gray-900 font-[--body-font]`}
+                >
                   {area.title}
                 </h3>
-                <p className="text-gray-600 mb-6 flex-grow">
+                <p
+                  className={`text-gray-600 mb-6 flex-grow font-[--body-font]`}
+                >
                   {area.description}
                 </p>
                 <Link
