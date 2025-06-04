@@ -32,17 +32,24 @@ const TestimonialsSlider = () => {
     },
     {
       quote:
-        "Their commitment to sustainable solutions helped us achieve our environmental goals while maintaining budget constraints.",
-      author: "Sarah Al Mansoori",
-      position: "Head of Development",
-      company: "Aldar Properties",
+        "Capital Engineering Consultancy expertise and commitment ensured smooth authority approvals for our Abu Dhabi projects. A reliable and professional team.",
+      author: "Rajkumar kirodiwal",
+      position: "Head Of Projects",
+      company: "Landmark Leisure",
     },
     {
       quote:
-        "The attention to detail and quality of engineering was exceptional. They delivered beyond our expectations.",
-      author: "Mohammed Al Hashimi",
-      position: "Project Director",
-      company: "Dubai Municipality",
+        "Capital Engineering Consultancy professionalism and design expertise were key to the successful completion of our KEZAD factory. Truly dependable partners.",
+      author: "Umesh Kumar",
+      position: "Managing Director",
+      company: "Polyfab Plastic Industry LLC", 
+    },
+    {
+      quote:
+        "Capital Engineering Consultancy played a key role in the smooth and successful completion of our Galleria Mall fit-out. Their contribution was both reliable and professional.",
+      author: "Ankush Bansal",
+      position: "Project Manager",
+      company: "Tesoro Casa", 
     },
   ];
 
