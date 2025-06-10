@@ -449,7 +449,32 @@ const Projectmanagement = () => {
             </div>
           </div>
         </section>
-        <ContactCTA />
+        {/* <ContactCTA /> */}
+        <section className="py-16 bg-[#f7f9fa]">
+          <div className="container text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-3xl mx-auto"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1f3a7d] mb-6">
+              Ready to Design Your Vision?
+              </h2>
+              <p className="text-lg text-black mb-8">
+                Let’s collaborate to create spaces that inspire and endure. Get
+                in touch with our team today.
+              </p>
+              <Link href="/contact">
+                <Button className="bg-[#1f3a7d] text-white hover:bg-[#1f3a7d]/90 px-6 py-3 rounded-lg uppercase">
+                  Contact Us
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

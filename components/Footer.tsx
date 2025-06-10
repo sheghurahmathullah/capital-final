@@ -63,17 +63,20 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row md:justify-between space-y-8 md:space-y-0">
               {/* Navigation Links */}
               <div className="flex flex-wrap gap-x-8 gap-y-2">
-                {["ABOUT US", "PORTFOLIO", "CAPITAL LEADERSHIP", "CONTACT"].map(
-                  (item) => (
-                    <Link
-                      key={item}
-                      href={`/${item.toLowerCase().replace(/ /g, "-")}`}
-                      className="hover:opacity-80 font-[--body-font]"
-                    >
-                      {item}
-                    </Link>
-                  )
-                )}
+                {[
+                  { title: "ABOUT US", path: "/about" },
+                  { title: "PORTFOLIO", path: "/portfolio" },
+                  { title: "CAPITAL LEADERSHIP", path: "/leadership" },
+                  { title: "CONTACT", path: "/contact" },
+                ].map((item) => (
+                  <Link
+                    key={item.title}
+                    href={item.path}
+                    className="hover:opacity-80 font-[--body-font]"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
               </div>
 
               {/* Legal Links */}

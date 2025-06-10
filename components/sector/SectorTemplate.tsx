@@ -25,7 +25,7 @@ interface SectorTemplateProps {
     icon: React.ReactNode;
     description: string;
   }[];
-  featuredProjects: {
+  featuredProjects?: {
     title: string;
     description: string;
     image: string;
@@ -36,11 +36,12 @@ interface SectorTemplateProps {
     };
     slug: string;
   }[];
-  whyChooseUs: string;
+  whyChooseUs?: string;
   downloadBrochure?: {
     title: string;
     url: string;
   };
+  children?: React.ReactNode;
 }
 
 const SectorTemplate: React.FC<SectorTemplateProps> = ({
@@ -57,6 +58,7 @@ const SectorTemplate: React.FC<SectorTemplateProps> = ({
   featuredProjects,
   whyChooseUs,
   downloadBrochure,
+  children,
 }) => {
   // Animation variants
   const fadeIn = {
@@ -139,7 +141,7 @@ const SectorTemplate: React.FC<SectorTemplateProps> = ({
       </section>
 
       {/* Introduction Section */}
-      <section className="py-20">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -172,6 +174,9 @@ const SectorTemplate: React.FC<SectorTemplateProps> = ({
           </motion.div>
         </div>
       </section>
+
+      {/* Navigation Section */}
+      {children}
 
       {/* Services Section */}
       <section className="py-20 bg-gray-50">
@@ -273,113 +278,118 @@ const SectorTemplate: React.FC<SectorTemplateProps> = ({
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeIn}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Featured {title} Projects
-            </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Explore our portfolio of successful {title.toLowerCase()} projects
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            {featuredProjects.map((project, index) => (
-              <motion.div key={index} variants={fadeIn} className="group">
-                <Card className="h-full border-none shadow-lg overflow-hidden">
-                  <Link href={`/portfolio/${project.slug}`}>
-                    <div className="h-64 relative overflow-hidden cursor-pointer">
-                      <div
-                        className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
-                        style={{ backgroundImage: `url(${project.image})` }}
-                      />
-                      <div className="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
-                    </div>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold mb-2 cursor-pointer hover:text-primary transition-colors">
-                        {project.title}
-                      </h3>
-                      <div className="text-sm space-y-2">
-                        <div>
-                          <p className="font-semibold text-gray-900">
-                            Location
-                          </p>
-                          <p className="text-gray-600">
-                            {project.details.location}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Link>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
+      {featuredProjects && featuredProjects.length > 0 && (
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
             <motion.div
-              className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-sm"
+              className="text-center mb-16"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeIn}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-                Why Choose Us for Your {title} Projects
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Featured {title} Projects
               </h2>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                {whyChooseUs}
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Explore our portfolio of successful {title.toLowerCase()}{" "}
+                projects
               </p>
+            </motion.div>
 
-              {downloadBrochure && (
-                <div className="mt-8">
-                  <div className="bg-gray-50 p-6 rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0 md:space-x-6">
-                    <div className="flex-grow">
-                      <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
-                        {downloadBrochure.title}
-                      </h3>
-                      <p className="text-sm md:text-base text-gray-600 max-w-2xl">
-                        Download our comprehensive brochure to get detailed
-                        insights into our {title.toLowerCase()} services.
-                      </p>
-                    </div>
-                    <div className="w-full md:w-auto">
-                      <Button
-                        className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white"
-                        size="lg"
-                        onClick={() =>
-                          window.open(downloadBrochure.url, "_blank")
-                        }
-                      >
-                        <Download className="mr-2 h-4 w-4" />
-                        Download
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              )}
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+            >
+              {featuredProjects.map((project, index) => (
+                <motion.div key={index} variants={fadeIn} className="group">
+                  <Card className="h-full border-none shadow-lg overflow-hidden">
+                    <Link href={`/portfolio/${project.slug}`}>
+                      <div className="h-64 relative overflow-hidden cursor-pointer">
+                        <div
+                          className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
+                          style={{ backgroundImage: `url(${project.image})` }}
+                        />
+                        <div className="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+                      </div>
+                      <CardContent className="p-6">
+                        <h3 className="text-xl font-bold mb-2 cursor-pointer hover:text-primary transition-colors">
+                          {project.title}
+                        </h3>
+                        <div className="text-sm space-y-2">
+                          <div>
+                            <p className="font-semibold text-gray-900">
+                              Location
+                            </p>
+                            <p className="text-gray-600">
+                              {project.details.location}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Link>
+                  </Card>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* Why Choose Us */}
+      {whyChooseUs && (
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <motion.div
+                className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-sm"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeIn}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                  Why Choose Us for Your {title} Projects
+                </h2>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {whyChooseUs}
+                </p>
+
+                {downloadBrochure && (
+                  <div className="mt-8">
+                    <div className="bg-gray-50 p-6 rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0 md:space-x-6">
+                      <div className="flex-grow">
+                        <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                          {downloadBrochure.title}
+                        </h3>
+                        <p className="text-sm md:text-base text-gray-600 max-w-2xl">
+                          Download our comprehensive brochure to get detailed
+                          insights into our {title.toLowerCase()} services.
+                        </p>
+                      </div>
+                      <div className="w-full md:w-auto">
+                        <Button
+                          className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white"
+                          size="lg"
+                          onClick={() =>
+                            window.open(downloadBrochure.url, "_blank")
+                          }
+                        >
+                          <Download className="mr-2 h-4 w-4" />
+                          Download
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="py-20 bg-white text-gray-900 relative overflow-hidden">

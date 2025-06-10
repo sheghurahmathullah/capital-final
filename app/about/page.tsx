@@ -129,7 +129,7 @@ const About = () => {
               </h1>
               <p className="text-lg md:text-xl text-gray-700">
                 Capital Engineering Consultancy is a multi-disciplinary firm
-                delivering impactful projects for over 17 years across 5+
+                delivering impactful projects for over 20 years across 5+
                 countries.
               </p>
             </div>
@@ -141,7 +141,7 @@ const About = () => {
           <div className="container">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
               <MetricCard number="20+" label="Years of Experience" />
-              <MetricCard number="7,200+" label="Projects Completed" />
+              <MetricCard number="7200+" label="Projects Completed" />
               <MetricCard number="600+" label="Expert Engineers" />
               <MetricCard number="10+" label="Industries" />
             </div>
@@ -152,12 +152,25 @@ const About = () => {
         </section>
 
         {/* Vision & Mission Section */}
-        <section className="section bg-gray-50">
+        <section className="section bg-gradient-to-b from-gray-50 to-white py-20">
           <div className="container">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Vision & Mission
+              </h2>
+              <div className="w-24 h-1 bg-[#211574] mx-auto"></div>
+            </div>
             <div className="grid md:grid-cols-2 gap-12">
-              <div className="bg-white p-8 rounded-md shadow-sm">
-                <h3 className="text-2xl font-bold mb-6">Our Vision</h3>
-                <p className="text-gray-700 leading-relaxed">
+              <div className="bg-white p-10 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-t-4 border-[#211574]">
+                <div className="flex items-center mb-6">
+                  <div className="bg-[#211574] p-3 rounded-lg mr-4">
+                    <Globe className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#211574]">
+                    Our Vision
+                  </h3>
+                </div>
+                <p className="text-gray-700 leading-relaxed text-lg">
                   "To be a globally recognized multidisciplinary consultancy,
                   shaping the construction landscape with innovative, reliable,
                   and sustainable solutions, and emerging as one of the top
@@ -165,9 +178,16 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-md shadow-sm">
-                <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
-                <p className="text-gray-700 leading-relaxed">
+              <div className="bg-white p-10 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-t-4 border-[#211574]">
+                <div className="flex items-center mb-6">
+                  <div className="bg-[#211574] p-3 rounded-lg mr-4">
+                    <Users className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#211574]">
+                    Our Mission
+                  </h3>
+                </div>
+                <p className="text-gray-700 leading-relaxed text-lg">
                   "We deliver unparalleled value through tailored engineering
                   solutions, leveraging advanced technologies and a culturally
                   diverse and skilled team. Committed to sustainability, we
@@ -180,45 +200,88 @@ const About = () => {
         </section>
 
         {/* Philosophy Section */}
-        <section className="section">
+        <section className="section bg-gradient-to-b from-white to-gray-50 py-24">
           <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-              Our Philosophy
-            </h2>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Our Philosophy
+              </h2>
+              <div className="w-24 h-1 bg-[#211574] mx-auto mb-8"></div>
+              <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+                Guiding principles that shape our approach to engineering
+                excellence
+              </p>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <PhilosophyCard
-                title="Collaboration as the Cornerstone"
-                description="We foster teamwork and knowledge sharing to drive innovation."
-                icon={<Users className="h-8 w-8 text-[#211574]" />}
-              />
+              <div className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#211574]/20">
+                <div className="bg-[#211574]/5 p-4 rounded-lg w-fit mb-6 group-hover:bg-[#211574]/10 transition-colors duration-300">
+                  <Users className="h-8 w-8 text-[#211574]" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-[#211574]">
+                  Collaboration as the Cornerstone
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We foster teamwork and knowledge sharing to drive innovation.
+                </p>
+              </div>
 
-              <PhilosophyCard
-                title="Client-Centric Approach"
-                description="We build lasting relationships by understanding client needs."
-                icon={<MessageCircle className="h-8 w-8 text-[#211574]" />}
-              />
+              <div className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#211574]/20">
+                <div className="bg-[#211574]/5 p-4 rounded-lg w-fit mb-6 group-hover:bg-[#211574]/10 transition-colors duration-300">
+                  <MessageCircle className="h-8 w-8 text-[#211574]" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-[#211574]">
+                  Client-Centric Approach
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We build lasting relationships by understanding client needs.
+                </p>
+              </div>
 
-              <PhilosophyCard
-                title="Adaptability and Agility"
-                description="Embracing change ensures efficient project execution."
-                icon={<Award className="h-8 w-8 text-[#211574]" />}
-              />
+              <div className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#211574]/20">
+                <div className="bg-[#211574]/5 p-4 rounded-lg w-fit mb-6 group-hover:bg-[#211574]/10 transition-colors duration-300">
+                  <Award className="h-8 w-8 text-[#211574]" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-[#211574]">
+                  Adaptability and Agility
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Embracing change ensures efficient project execution.
+                </p>
+              </div>
 
-              <PhilosophyCard
-                title="Beyond Technical Excellence"
-                description="We excel in communication, problem-solving, and project delivery."
-                icon={<Globe className="h-8 w-8 text-[#211574]" />}
-              />
+              <div className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#211574]/20">
+                <div className="bg-[#211574]/5 p-4 rounded-lg w-fit mb-6 group-hover:bg-[#211574]/10 transition-colors duration-300">
+                  <Globe className="h-8 w-8 text-[#211574]" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-[#211574]">
+                  Beyond Technical Excellence
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We excel in communication, problem-solving, and project
+                  delivery.
+                </p>
+              </div>
 
-              <PhilosophyCard
-                title="A Culture of Excellence"
-                description="We care deeply about results and relationships."
-                icon={<Award className="h-8 w-8 text-[#211574]" />}
-              />
+              <div className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#211574]/20">
+                <div className="bg-[#211574]/5 p-4 rounded-lg w-fit mb-6 group-hover:bg-[#211574]/10 transition-colors duration-300">
+                  <Award className="h-8 w-8 text-[#211574]" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-[#211574]">
+                  A Culture of Excellence
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We care deeply about results and relationships.
+                </p>
+              </div>
 
-              <div className="bg-[#211574] text-white p-8 rounded-md flex flex-col justify-center">
-                <h3 className="text-xl font-bold mb-4">Our Expert Team</h3>
-                <p className="opacity-90">
+              <div className="group bg-[#211574] p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300">
+                <div className="bg-white/10 p-4 rounded-lg w-fit mb-6">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-white">
+                  Our Expert Team
+                </h3>
+                <p className="text-white/90 leading-relaxed">
                   Our expert team, client focus, and innovation shape a better
                   future.
                 </p>
@@ -228,61 +291,80 @@ const About = () => {
         </section>
 
         {/* Awards Section */}
-        <section className="section bg-gray-50">
+        <section className="section bg-gradient-to-b from-gray-50 to-white py-24">
           <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-              Awards & Recognition
-            </h2>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Awards & Recognition
+              </h2>
+              <div className="w-24 h-1 bg-[#211574] mx-auto mb-8"></div>
+              <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+                Celebrating excellence and industry recognition
+              </p>
+            </div>
             <div className="overflow-hidden relative">
               <div
-                className="flex gap-6 py-4"
+                className="flex gap-8 py-4"
                 style={{
-                  animation: "scroll 40s linear infinite",
+                  animation: "awardScroll 40s linear infinite",
                   width: "max-content",
                 }}
               >
                 {portfolioData2.map((award) => (
                   <div
                     key={award.id}
-                    className="min-w-[280px] bg-white p-6 rounded-md shadow-sm flex flex-col items-center justify-center text-center cursor-pointer hover:scale-105 transition-transform"
+                    className="min-w-[300px] bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#211574]/20 group"
                     onClick={() => openFullScreenImage(award.imageSrc)}
                   >
-                    <div className="h-52 w-full mb-4 overflow-hidden rounded">
+                    <div className="h-56 w-full mb-6 overflow-hidden rounded-lg bg-gray-50">
                       <img
                         src={award.imageSrc}
                         alt={award.title}
-                        className="h-full w-full object-contain"
+                        className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <span className="font-medium">{award.title}</span>
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-[#211574]">
+                        {award.title}
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-[#211574]/5 flex items-center justify-center group-hover:bg-[#211574]/10 transition-colors duration-300">
+                        <Award className="h-4 w-4 text-[#211574]" />
+                      </div>
+                    </div>
                   </div>
                 ))}
-                {/* Duplicate first few items for seamless looping */}
                 {portfolioData2.slice(0, 4).map((award) => (
                   <div
                     key={`duplicate-${award.id}`}
-                    className="min-w-[280px] bg-white p-6 rounded-md shadow-sm flex flex-col items-center justify-center text-center cursor-pointer hover:scale-105 transition-transform"
+                    className="min-w-[300px] bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#211574]/20 group"
                     onClick={() => openFullScreenImage(award.imageSrc)}
                   >
-                    <div className="h-52 w-full mb-4 overflow-hidden rounded">
+                    <div className="h-56 w-full mb-6 overflow-hidden rounded-lg bg-gray-50">
                       <img
                         src={award.imageSrc}
                         alt={award.title}
-                        className="h-full w-full object-contain"
+                        className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <span className="font-medium">{award.title}</span>
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-[#211574]">
+                        {award.title}
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-[#211574]/5 flex items-center justify-center group-hover:bg-[#211574]/10 transition-colors duration-300">
+                        <Award className="h-4 w-4 text-[#211574]" />
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
-            <style>{`
-              @keyframes scroll {
+            <style jsx>{`
+              @keyframes awardScroll {
                 0% {
                   transform: translateX(0);
                 }
                 100% {
-                  transform: translateX(calc(-280px * 8 - 6rem * 8)); /* Width of 8 cards + gaps */
+                  transform: translateX(calc(-300px * 7 - 2rem * 7));
                 }
               }
             `}</style>
@@ -290,38 +372,62 @@ const About = () => {
         </section>
 
         {/* CEO Message */}
-        <section className="section">
+        <section className="section bg-gradient-to-b from-white to-gray-50 py-24">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Message from our CEO
-              </h2>
-              <div className="bg-white p-8 rounded-md shadow-sm flex flex-col md:flex-row gap-8">
-                <blockquote className="text-gray-700 leading-relaxed md:w-2/3">
-                  <p className="mb-6">
-                    "Established in 2006 and headquartered in the UAE, Capital
-                    Engineering Consultancy is a leading multidisciplinary firm
-                    present across KSA, Oman, Egypt, India and Iraq. Blending
-                    tradition with innovation, we deliver practical and
-                    sustainable solutions across architecture, structural
-                    engineering, roads, infrastructure, and oil & gas."
-                  </p>
-                  <p>
-                    "Driven by excellence and commitment, we reshape the
-                    engineering landscape with quality and transformative
-                    outcomes."
-                  </p>
-                  <footer className="mt-6 font-bold">
-                    — Balaskandan Raghunathan, CEO & Managing Director
-                  </footer>
-                </blockquote>
-                <div className="md:w-1/3 flex items-center justify-center">
-                  <div className="w-full h-64 md:h-full rounded-md overflow-hidden">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                  Message from our CEO
+                </h2>
+                <div className="w-24 h-1 bg-[#211574] mx-auto mb-8"></div>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="p-8 md:p-10">
+                    <div className="mb-6">
+                      <div className="w-14 h-14 bg-[#211574]/5 rounded-lg flex items-center justify-center mb-4">
+                        <MessageCircle className="h-7 w-7 text-[#211574]" />
+                      </div>
+                      <blockquote className="text-gray-700 leading-relaxed">
+                        <p className="mb-4">
+                          "Established in 2006 and headquartered in the UAE,
+                          Capital Engineering Consultancy is a leading
+                          multidisciplinary firm present across KSA, Oman,
+                          Egypt, India and Iraq. Blending tradition with
+                          innovation, we deliver practical and sustainable
+                          solutions across architecture, structural engineering,
+                          roads, infrastructure, and oil & gas."
+                        </p>
+                        <p>
+                          "Driven by excellence and commitment, we reshape the
+                          engineering landscape with quality and transformative
+                          outcomes."
+                        </p>
+                      </blockquote>
+                      <footer className="mt-6">
+                        <div className="flex items-center">
+                          <div className="w-10 h-10 rounded-full bg-[#211574]/5 flex items-center justify-center mr-3">
+                            <Users className="h-5 w-5 text-[#211574]" />
+                          </div>
+                          <div>
+                            <p className="font-bold text-[#211574]">
+                              Balaskandan Raghunathan
+                            </p>
+                            <p className="text-gray-600 text-sm">
+                              CEO & Managing Director
+                            </p>
+                          </div>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                  <div className="relative h-[400px]">
                     <img
                       src="/about/c3.png"
                       alt="CEO of Capital Engineering Consultancy"
-                      className="w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   </div>
                 </div>
               </div>
@@ -330,30 +436,58 @@ const About = () => {
         </section>
 
         {/* Our Team Behind the Vision */}
-        <section className="section bg-gray-50">
+        <section className="section bg-gradient-to-b from-gray-50 to-white py-24">
           <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-              Our Team Behind the Vision
-            </h2>
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="md:w-1/2">
-                <div className="rounded-md overflow-hidden">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Our Team Behind the Vision
+              </h2>
+              <div className="w-24 h-1 bg-[#211574] mx-auto mb-8"></div>
+              <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+                Meet the dedicated professionals driving innovation and
+                excellence
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="relative group">
+                <div className="rounded-2xl overflow-hidden shadow-xl">
                   <img
-                    src="/about/our-people.JPG"
+                    src="/about/our-team.jpg"
                     alt="Capital Engineering Consultancy Team"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#211574]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
+                {/* <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#211574] rounded-full opacity-10"></div> */}
               </div>
-              <div className="md:w-1/2">
-                <div className="bg-white p-8 rounded-md shadow-sm">
-                  <p className="text-gray-700 leading-relaxed mb-4">
+              <div className="space-y-8">
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-[#211574]/5 p-4 rounded-lg mr-4">
+                      <Users className="h-8 w-8 text-[#211574]" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#211574]">
+                      Expert Team
+                    </h3>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed mb-6">
                     Capital Engineering Consultancy's success is driven by a
                     dedicated team of experts in architecture, structural
                     engineering, MEP services, BIM, roads, and infrastructure,
                     committed to delivering innovative and high-quality
                     solutions.
                   </p>
+               
+                </div>
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-[#211574]/5 p-4 rounded-lg mr-4">
+                      <Globe className="h-8 w-8 text-[#211574]" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#211574]">
+                      Global Impact
+                    </h3>
+                  </div>
                   <p className="text-gray-700 leading-relaxed">
                     By embracing challenges and continuous learning, we stay at
                     the forefront of industry advancements, blending creativity
@@ -369,9 +503,10 @@ const About = () => {
         {/* Clients Section */}
         <section className="section">
           <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
               Our Clients
             </h2>
+             <div className="w-24 h-1 bg-[#211574] mx-auto mb-8"></div>
             <div className="overflow-hidden relative">
               <div
                 className="flex gap-6 py-4"

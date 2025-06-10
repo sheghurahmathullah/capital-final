@@ -19,6 +19,8 @@ import { Badge } from "@/components/ui/badge";
 import { client1 } from "../../../lib/sanity";
 import { PortableText } from "@portabletext/react";
 import ImageGallery from "./ImageGallery";
+import jsPDF from "jspdf";
+import DownloadButton from "./DownloadButton";
 
 interface Project {
   title: string;
@@ -67,6 +69,28 @@ async function getProject(slug: string) {
     console.error("Error fetching project:", error);
     return null;
   }
+}
+
+async function generatePDF(project: Project) {
+  const doc = new jsPDF();
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(16);
+  doc.text(project.title, 10, 10);
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(12);
+  doc.text(`Category: ${project.categoryName}`, 10, 20);
+  doc.text(`Location: ${project.location}`, 10, 30);
+  doc.text(`Scope of Work: ${project.scopeOfWork}`, 10, 40);
+  doc.text(`Project Status: ${project.projectStatus}`, 10, 50);
+  doc.text(`Completion Date: ${project.completionDate}`, 10, 60);
+
+  doc.setFontSize(12);
+  doc.text("Description:", 10, 70);
+  doc.setFontSize(10);
+  doc.text(doc.splitTextToSize(project.body[0].children[0].text, 180), 10, 80);
+
+  doc.save(`${project.title.replace(/\s+/g, "_")}_Details.pdf`);
 }
 
 export async function generateStaticParams() {
@@ -119,6 +143,8 @@ export default async function PortfolioDetail({
               Back to Portfolio
             </Link>
           </Button>
+
+          <DownloadButton project={project} />
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             <div className="col-span-2 bg-white p-8 rounded-xl shadow-sm">

@@ -3,7 +3,23 @@ import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectorTemplate from "@/components/sector/SectorTemplate";
-import { Train, Map, Shield, BarChart3 } from "lucide-react";
+import {
+  Train,
+  Map,
+  Shield,
+  BarChart3,
+  Building,
+  GraduationCap,
+  Droplet,
+  Power,
+  Ship,
+  Hotel,
+  Factory,
+  Waves,
+  Fuel,
+  Zap,
+  Route,
+} from "lucide-react";
 import { client1, urlForClient1 } from "../../../lib/sanity";
 
 type Project = {
@@ -18,6 +34,59 @@ type Project = {
     current: string;
   };
 };
+
+const topics = [
+  {
+    title: "Commercial",
+    path: "/sector/commercial",
+    icon: <Building className="h-6 w-6" />,
+  },
+  {
+    title: "Education",
+    path: "/sector/education",
+    icon: <GraduationCap className="h-6 w-6" />,
+  },
+  {
+    title: "Railways",
+    path: "/sector/railways",
+    icon: <Train className="h-6 w-6" />,
+  },
+  {
+    title: "Oil & Gas",
+    path: "/sector/oil-gas",
+    icon: <Fuel className="h-6 w-6" />,
+  },
+  {
+    title: "Power & Energy",
+    path: "/sector/power-energy",
+    icon: <Zap className="h-6 w-6" />,
+  },
+  {
+    title: "Marine & Ports",
+    path: "/sector/marine-ports",
+    icon: <Ship className="h-6 w-6" />,
+  },
+  {
+    title: "Healthcare & Hospitality",
+    path: "/sector/healthcare-hospitality",
+    icon: <Hotel className="h-6 w-6" />,
+  },
+  {
+    title: "Industrial & Logistics",
+    path: "/sector/industrial-logistics",
+    icon: <Factory className="h-6 w-6" />,
+  },
+  {
+    title: "Roads & Infrastructure",
+    path: "/sector/roads-infrastructure",
+    icon: <Route className="h-6 w-6" />,
+  },
+  {
+    title: "WTP, RO & Desalination",
+    path: "/sector/wtp-ro-desalination",
+    icon: <Waves className="h-6 w-6" />,
+  },
+];
 
 const Railways = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -61,7 +130,8 @@ const Railways = () => {
       area: project.area || "",
       completion: project.completion || "",
     },
-    slug: typeof project.slug === "string" ? project.slug : project.slug.current,
+    slug:
+      typeof project.slug === "string" ? project.slug : project.slug.current,
   }));
 
   return (
@@ -152,7 +222,30 @@ const Railways = () => {
           title: "Railways Projects Brochure",
           url: "#",
         }}
-      />
+      >
+        {/* Navigation Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container">
+            <h2 className="text-3xl font-bold text-center mb-8">
+              Explore Our Sectors
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {topics.map((topic, index) => (
+                <a
+                  key={index}
+                  href={topic.path}
+                  className="flex items-center gap-4 p-4 border rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="text-primary">{topic.icon}</div>
+                  <h3 className="text-lg font-medium text-gray-800">
+                    {topic.title}
+                  </h3>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      </SectorTemplate>
       <Footer />
     </>
   );

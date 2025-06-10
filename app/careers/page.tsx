@@ -225,9 +225,11 @@ const Careers = () => {
                       </div>
                     </div>
                     <Link
-                      href={`mailto:hr@capitalengg.com?subject=${encodeURIComponent(
-                        `Application for ${job.title}`
+                      href={`https://mail.google.com/mail/?view=cm&fs=1&to=hr@capitalengg.com&su=Application for ${encodeURIComponent(
+                        job.title
                       )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-full"
                     >
                       <Button className="w-full">Apply Now</Button>

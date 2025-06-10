@@ -13,6 +13,7 @@ import LeadershipInsight from "@/components/LeadershipInsight";
 import ContactCTA from "@/components/ContactCTA";
 import ExperienceCards from "@/components/ExperienceCards";
 import NewsroomTeasers from "@/components/NewsroomTeasers";
+import Awards from "@/components/Awards";
 import ProjectsShowcase from "@/components/ProjectsShowcase";
 import Footer from "@/components/Footer";
 import FAQSection from "@/components/FAQSection";
@@ -43,6 +44,7 @@ const Page = () => {
           <TestimonialsSlider />
           <LeadershipInsight />
           <NewsroomTeasers />
+          <Awards />
           <FAQSection />
           <ContactCTA />
         </div>

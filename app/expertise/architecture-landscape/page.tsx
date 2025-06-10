@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import ContactCTA from "@/components/ContactCTA";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -171,7 +170,7 @@ const ArchitectureLandscape = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Designed to Inspire. Engineered to Last.
+                Architecture Meets Earth. Vision Meets Detail
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Exceptional interiors that blend aesthetics with precision
@@ -346,7 +345,7 @@ const ArchitectureLandscape = () => {
                 </FeatureItem>
                 <FeatureItem>
                   Cross-disciplinary Expertise — Architects, planners, engineers
-                  under one roof
+                  collaboration
                 </FeatureItem>
                 <FeatureItem>
                   Unmatched Quality — We build for decades, not just deadlines
@@ -355,8 +354,7 @@ const ArchitectureLandscape = () => {
                   Transparent Collaboration — Always human-first
                 </FeatureItem>
                 <FeatureItem>
-                  Strategic Locations — On-ground teams across MENA, India &
-                  Europe
+                  Strategic Locations — On-ground teams across MENA & India
                 </FeatureItem>
               </div>
             </div>
@@ -438,9 +436,36 @@ const ArchitectureLandscape = () => {
             </div>
           </div>
         </section>
-        <ContactCTA />
+
+        {/* Custom CTA Section */}
+        <section className="py-16 bg-[#f7f9fa]">
+          <div className="container text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-3xl mx-auto"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1f3a7d] mb-6">
+              Ready to Design Your Vision?
+              </h2>
+              <p className="text-lg text-black mb-8">
+                Let’s collaborate to create spaces that inspire and endure. Get
+                in touch with our team today.
+              </p>
+              <Link href="/contact">
+                <Button className="bg-[#1f3a7d] text-white hover:bg-[#1f3a7d]/90 px-6 py-3 rounded-lg uppercase">
+                  Contact Us
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 };
