@@ -37,7 +37,7 @@ const topics = [
   },
   {
     title: "Oil & Gas",
-    path: "/sector/oil-gas",
+    path: "/sector/oil-gases",
     icon: <Fuel className="h-6 w-6" />,
   },
   {
@@ -62,7 +62,7 @@ const topics = [
   },
   {
     title: "Roads & Infrastructure",
-    path: "/sector/roads-infrastructure",
+    path: "/sector/road-infrastructure",
     icon: <Route className="h-6 w-6" />,
   },
   {
