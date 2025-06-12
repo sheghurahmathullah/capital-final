@@ -85,7 +85,7 @@ const Hero = () => {
               <h1
                 className={`text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-[--body-font]`}
               >
-                Your Premier Partner in Engineering & Construction
+                Your Premier Partner in Engineering Design
               </h1>
               <p
                 className={`text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl font-[--body-font]`}
